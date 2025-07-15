@@ -1,9 +1,9 @@
-export default function DocsPage({
+export default async function DocsPage({
   params,
 }: {
-  params: { slug?: string[] };
+  params: Promise<{ slug?: string[] }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   // 处理不同的路径情况
   if (!slug || slug.length === 0) {
